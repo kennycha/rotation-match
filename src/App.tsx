@@ -99,6 +99,8 @@ function App() {
         };
 
         const handleSceneReady = (scene: BABYLON.Scene) => {
+          scene.useRightHandedSystem = true;
+
           const arcRotateCamera = new BABYLON.ArcRotateCamera(
             "arcRotateCamera",
             0,
@@ -107,7 +109,7 @@ function App() {
             BABYLON.Vector3.Zero(),
             scene
           );
-          arcRotateCamera.setPosition(new BABYLON.Vector3(0, 3, 5));
+          arcRotateCamera.setPosition(new BABYLON.Vector3(1, 1, 5));
           arcRotateCamera.attachControl(canvasRef.current, false, true);
           arcRotateCamera.allowUpsideDown = false;
           arcRotateCamera.minZ = 0.1;
